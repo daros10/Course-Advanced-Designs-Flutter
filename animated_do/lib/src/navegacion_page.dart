@@ -85,15 +85,14 @@ class BotonFlotante extends StatelessWidget {
       backgroundColor: Colors.pink,
       child: FaIcon(FontAwesomeIcons.play),
       onPressed: () {
-        int numero =
-            Provider.of<_NotificationModel>(context, listen: false).numero;
+        final notiProvider =
+            Provider.of<_NotificationModel>(context, listen: false);
+        int numero = notiProvider.numero;
         numero++;
-        Provider.of<_NotificationModel>(context, listen: false).numero = numero;
+        notiProvider.numero = numero;
 
         if (numero >= 2) {
-          final controller =
-              Provider.of<_NotificationModel>(context, listen: false)
-                  .bounceController;
+          final controller = notiProvider.bounceController;
           controller.forward(from: 0.0);
         }
       },
