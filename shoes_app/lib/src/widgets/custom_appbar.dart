@@ -13,7 +13,7 @@ class CustomAppbar extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30),
         child: Container(
-          margin: EdgeInsets.only(top: 10),
+          margin: EdgeInsets.only(top: 20),
           width: double.infinity,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,

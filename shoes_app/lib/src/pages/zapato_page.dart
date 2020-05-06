@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_app/src/helpers/helpers.dart';
 import 'package:shoes_app/src/widgets/custom_widgets.dart';
 
 class ZapatoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // cambiar el color de las cosas de la barra de notificaciones :P
+    cambiarStatusLight();
     return Scaffold(
       body: Column(
         children: <Widget>[
           CustomAppbar(texto: 'For you'),
+          SizedBox(
+            height: 10,
+          ),
           Expanded(
               child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
             child: Column(
               children: <Widget>[
-                ZapatoSizePreview(),
+                Hero(tag: 'zapato-1', child: ZapatoSizePreview()),
                 ZapatoDescripcion(
                   titulo: 'Nike Max Air 720',
                   descripcion:
@@ -22,6 +28,7 @@ class ZapatoPage extends StatelessWidget {
               ],
             ),
           )),
+          AgregarCarritoBoton(monto: 180.0),
         ],
       ),
     );
